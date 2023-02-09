@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211F0AE229941D8800A2AABF /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211F0AE129941D8800A2AABF /* CircleView.swift */; };
+		211F0AE52994278300A2AABF /* CurrentInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211F0AE42994278300A2AABF /* CurrentInfoView.swift */; };
+		211F0AE729942AFD00A2AABF /* NextDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 211F0AE629942AFD00A2AABF /* NextDaysView.swift */; };
 		21B1AC02298C4723007B50C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AC01298C4723007B50C8 /* AppDelegate.swift */; };
 		21B1AC04298C4723007B50C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AC03298C4723007B50C8 /* SceneDelegate.swift */; };
 		21B1AC0B298C4724007B50C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B1AC0A298C4724007B50C8 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		211F0AE129941D8800A2AABF /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		211F0AE42994278300A2AABF /* CurrentInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentInfoView.swift; sourceTree = "<group>"; };
+		211F0AE629942AFD00A2AABF /* NextDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextDaysView.swift; sourceTree = "<group>"; };
 		21B1ABFE298C4723007B50C8 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B1AC01298C4723007B50C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B1AC03298C4723007B50C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211F0ADE29941CCB00A2AABF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21B1AC0A298C4724007B50C8 /* Assets.xcassets */,
+				21B1AC0C298C4724007B50C8 /* LaunchScreen.storyboard */,
+				21B1AC0F298C4724007B50C8 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		211F0ADF29941CF900A2AABF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				21B1AC01298C4723007B50C8 /* AppDelegate.swift */,
+				21B1AC03298C4723007B50C8 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		211F0AE029941D2500A2AABF /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				21B1AC15298C4766007B50C8 /* View */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		211F0AE329941E1500A2AABF /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				211F0AE129941D8800A2AABF /* CircleView.swift */,
+				211F0AE42994278300A2AABF /* CurrentInfoView.swift */,
+				211F0AE629942AFD00A2AABF /* NextDaysView.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		21B1ABF5298C4723007B50C8 = {
 			isa = PBXGroup;
 			children = (
@@ -62,12 +105,9 @@
 		21B1AC00298C4723007B50C8 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				21B1AC01298C4723007B50C8 /* AppDelegate.swift */,
-				21B1AC03298C4723007B50C8 /* SceneDelegate.swift */,
-				21B1AC15298C4766007B50C8 /* View */,
-				21B1AC0A298C4724007B50C8 /* Assets.xcassets */,
-				21B1AC0C298C4724007B50C8 /* LaunchScreen.storyboard */,
-				21B1AC0F298C4724007B50C8 /* Info.plist */,
+				211F0ADF29941CF900A2AABF /* Application */,
+				211F0AE029941D2500A2AABF /* MainModule */,
+				211F0ADE29941CCB00A2AABF /* Resources */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -75,8 +115,9 @@
 		21B1AC15298C4766007B50C8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				21B1AC16298C479F007B50C8 /* MainView.swift */,
 				21B1AC18298C4847007B50C8 /* MainViewController.swift */,
+				21B1AC16298C479F007B50C8 /* MainView.swift */,
+				211F0AE329941E1500A2AABF /* Subviews */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,9 +202,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				211F0AE52994278300A2AABF /* CurrentInfoView.swift in Sources */,
 				21B1AC17298C479F007B50C8 /* MainView.swift in Sources */,
+				211F0AE229941D8800A2AABF /* CircleView.swift in Sources */,
 				21B1AC02298C4723007B50C8 /* AppDelegate.swift in Sources */,
 				21B1AC04298C4723007B50C8 /* SceneDelegate.swift in Sources */,
+				211F0AE729942AFD00A2AABF /* NextDaysView.swift in Sources */,
 				21B1AC19298C4847007B50C8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T5826VSXK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -332,7 +376,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T5826VSXK9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
