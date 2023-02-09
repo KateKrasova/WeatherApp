@@ -7,7 +7,18 @@
 
 import UIKit
 
-class NextDaysView: UIView {
+final class NextDaysView: UIView {
+    
+    // MARK: Props
+
+    struct Props: Equatable {
+        let dayOfTheWeek: String
+        let tempValue: String
+    }
+
+    // MARK: - Private Props
+
+    private var props: Props?
     
     //MARK: - Views
     private lazy var mainView = UIView().then{
@@ -42,6 +53,19 @@ class NextDaysView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
+// MARK: - Public Methods
+
+extension NextDaysView {
+    func render(_ props: Props) {
+        guard self.props != props else { return }
+        self.props = props
+        dayLabel.text = props.dayOfTheWeek
+        temperatureLabel.text = "\(props.tempValue)°C"
+    }
+}
+
+
 
 // MARK: - Private Methods
 

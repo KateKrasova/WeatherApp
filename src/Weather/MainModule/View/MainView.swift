@@ -10,7 +10,28 @@ import SnapKit
 import SwifterSwift
 import Then
 
-class MainView: UIView {
+final class MainView: UIView {
+    // MARK: Props
+
+    struct Props: Equatable {
+        let date: String
+        let city: String
+        let country: String
+
+        let temperature: String
+
+        let wind: String
+        let visibility: String
+        let humidity: String
+        let airPressure: String
+        
+        let dayOfTheWeek: String
+        let futureTemperature: String 
+    }
+
+    // MARK: - Private Props
+
+    private var props: Props?
     
     // MARK: - Views
     private lazy var findButton = UIButton(type: .system).then{
@@ -111,6 +132,32 @@ class MainView: UIView {
     }
 }
 
+// MARK: - Public Methods
+
+extension MainView {
+    func render (_ props: Props) {
+        guard self.props != props else { return }
+        self.props = props
+        
+        dateLabel.text = "Today, \(props.date)"
+        cityLabel.text = props.city
+        countryLabel.text = props.country
+        
+        circleView.render(.init(tempValue: props.temperature))
+        
+        windLabel.render(.init(title: "Wind Status", value: props.wind))
+        visibilityLabel.render(.init(title: "Visibility", value: props.visibility))
+        humidityLabel.render(.init(title: "Humidity", value: props.humidity))
+        airLabel.render(.init(title: "Air Pressure", value: props.airPressure))
+        
+        let all5days = [view1, view2, view3, view4, view5]
+        
+        all5days.forEach { day in
+            day.render(.init(dayOfTheWeek: props.dayOfTheWeek, tempValue: props.futureTemperature))
+        }
+    }
+}
+
 // MARK: - Private Methods
 private extension MainView {
     func configure() {
@@ -173,7 +220,6 @@ private extension MainView {
         }
         
         nextDaysStackView.snp.makeConstraints{
-
             $0.bottom.equalToSuperview().inset(75)
             $0.left.right.equalTo(bottomView).inset(8)
         }

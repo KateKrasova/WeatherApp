@@ -8,13 +8,22 @@
 import UIKit
 
 final class CircleView: UIView {
+    // MARK: Props
+
+    struct Props: Equatable {
+        let tempValue: String
+    }
+
+    // MARK: - Private Props
+
+    private var props: Props?
     
     //MARK: - Views
     
     private lazy var temperatureLabel = UILabel().then{
-        $0.text = "10°C"
         $0.textColor = .black
         $0.font = UIFont(name: "Optima Regular", size: 90)
+        $0.text = "10 °C"
     }
     
     private lazy var weatherImage = UIImageView().then{
@@ -34,7 +43,17 @@ final class CircleView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+// MARK: - Public Methods
+
+extension CircleView {
+    func render(_ props: Props) {
+        guard self.props != props else { return }
+        self.props = props
+
+        temperatureLabel.text = "\(props.tempValue)°C"
+    }
 }
 
 // MARK: - Private Methods
