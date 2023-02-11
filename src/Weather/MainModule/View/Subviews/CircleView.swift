@@ -22,7 +22,7 @@ final class CircleView: UIView {
     
     private lazy var temperatureLabel = UILabel().then{
         $0.textColor = .black
-        $0.font = UIFont(name: "Optima Regular", size: 90)
+        $0.font = UIFont(name: "Optima Regular", size: 50)
         $0.text = "10 °C"
     }
     

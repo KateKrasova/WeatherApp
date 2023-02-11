@@ -40,6 +40,7 @@ final class NextDaysView: UIView {
     private lazy var temperatureLabel = UILabel().then{
         $0.font = UIFont(name: "Optima Regular", size: 15)
         $0.text = "10° C"
+        $0.textColor = .black
     }
     
     //MARK: - LifeCycle

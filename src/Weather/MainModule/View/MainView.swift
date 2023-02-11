@@ -101,6 +101,7 @@ final class MainView: UIView {
     private lazy var next5daysLabel = UILabel().then{
         $0.font = UIFont(name: "Optima Bold", size: 16)
         $0.text = "The Next 5 days"
+        $0.textColor = .black
     }
     
     private lazy var view1 = NextDaysView()
@@ -116,7 +117,8 @@ final class MainView: UIView {
         axis: .horizontal,
         spacing: 7,
         alignment: .center,
-        distribution: .fillEqually)
+        distribution: .fillEqually
+    )
     
     // MARK: - LifeCycle
     init() {

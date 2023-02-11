@@ -19,6 +19,9 @@
 		21B1AC1C298C497F007B50C8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 21B1AC1B298C497F007B50C8 /* SnapKit */; };
 		21B1AC1F298C4995007B50C8 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 21B1AC1E298C4995007B50C8 /* Then */; };
 		21B1AC22298C49AD007B50C8 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 21B1AC21298C49AD007B50C8 /* SwifterSwift */; };
+		D48031F829954AAD003C20F2 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48031F729954AAD003C20F2 /* ApiService.swift */; };
+		D48031FB29954B1B003C20F2 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = D48031FA29954B1B003C20F2 /* Networking */; };
+		D48031FE29954F1A003C20F2 /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48031FD29954F1A003C20F2 /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,8 @@
 		21B1AC0F298C4724007B50C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21B1AC16298C479F007B50C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		21B1AC18298C4847007B50C8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D48031F729954AAD003C20F2 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		D48031FD29954F1A003C20F2 /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 			files = (
 				21B1AC22298C49AD007B50C8 /* SwifterSwift in Frameworks */,
 				21B1AC1C298C497F007B50C8 /* SnapKit in Frameworks */,
+				D48031FB29954B1B003C20F2 /* Networking in Frameworks */,
 				21B1AC1F298C4995007B50C8 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +113,8 @@
 			children = (
 				211F0ADF29941CF900A2AABF /* Application */,
 				211F0AE029941D2500A2AABF /* MainModule */,
+				D48031FC29954EF7003C20F2 /* Models */,
+				D48031F629954A8A003C20F2 /* Services */,
 				211F0ADE29941CCB00A2AABF /* Resources */,
 			);
 			path = Weather;
@@ -120,6 +128,22 @@
 				211F0AE329941E1500A2AABF /* Subviews */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		D48031F629954A8A003C20F2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D48031F729954AAD003C20F2 /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		D48031FC29954EF7003C20F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D48031FD29954F1A003C20F2 /* WeatherResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +166,7 @@
 				21B1AC1B298C497F007B50C8 /* SnapKit */,
 				21B1AC1E298C4995007B50C8 /* Then */,
 				21B1AC21298C49AD007B50C8 /* SwifterSwift */,
+				D48031FA29954B1B003C20F2 /* Networking */,
 			);
 			productName = Weather;
 			productReference = 21B1ABFE298C4723007B50C8 /* Weather.app */;
@@ -175,6 +200,7 @@
 				21B1AC1A298C497F007B50C8 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				21B1AC1D298C4995007B50C8 /* XCRemoteSwiftPackageReference "Then" */,
 				21B1AC20298C49AD007B50C8 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				D48031F929954B1B003C20F2 /* XCRemoteSwiftPackageReference "Networking" */,
 			);
 			productRefGroup = 21B1ABFF298C4723007B50C8 /* Products */;
 			projectDirPath = "";
@@ -208,6 +234,8 @@
 				21B1AC02298C4723007B50C8 /* AppDelegate.swift in Sources */,
 				21B1AC04298C4723007B50C8 /* SceneDelegate.swift in Sources */,
 				211F0AE729942AFD00A2AABF /* NextDaysView.swift in Sources */,
+				D48031F829954AAD003C20F2 /* ApiService.swift in Sources */,
+				D48031FE29954F1A003C20F2 /* WeatherResponse.swift in Sources */,
 				21B1AC19298C4847007B50C8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +470,14 @@
 				minimumVersion = 5.3.0;
 			};
 		};
+		D48031F929954B1B003C20F2 /* XCRemoteSwiftPackageReference "Networking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/freshOS/Networking";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -459,6 +495,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21B1AC20298C49AD007B50C8 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
 			productName = SwifterSwift;
+		};
+		D48031FA29954B1B003C20F2 /* Networking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D48031F929954B1B003C20F2 /* XCRemoteSwiftPackageReference "Networking" */;
+			productName = Networking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
